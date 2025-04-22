@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+djangorestframework = "*"
+django-cors-headers = "*"
+django-filter = "*"
+django = "*"
+pillow = "*"
+mysqlclient = "*"
+pymysql = "*"
+whitenoise = "*"
+gunicorn = "*"
+vercel = "*"
+psycopg2 = "*"
+psycopg2-binary = "*"
+psycopg = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
