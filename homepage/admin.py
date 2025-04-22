@@ -3,7 +3,7 @@ from django.contrib import admin
 
 class FAQAdmin(admin.ModelAdmin):
     list_filter = ('course',)  
-    list_display = ('question', 'course')  # Show course in list view
+    list_display = ('question', 'course')
     
 from .models import *
 admin.site.register(Banners)
