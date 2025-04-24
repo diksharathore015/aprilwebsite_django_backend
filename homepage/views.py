@@ -28,3 +28,7 @@ class home_page_dataViewSet(viewsets.ModelViewSet):
     queryset = home_page_data.objects.all()
     serializer_class = home_page_dataSerializer
     
+class EnquieryFormViewSet(viewsets.ModelViewSet):
+    queryset = EnquiryForm.objects.all()
+    serializer_class= EnquieryFormSerializer
+    http_method_names = ['get', 'post', 'delete','patch']

@@ -9,6 +9,7 @@ router.register(r'seo',SeoViewSet , "seo")
 router.register(r'faqs', FAQViewSet)
 router.register(r'facilities',FacilityViewSet )
 router.register(r'homepagedata',home_page_dataViewSet )
+router.register('enquiry', EnquieryFormViewSet)
 
 urlpatterns = [
     path('' , include(router.urls))

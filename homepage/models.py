@@ -53,5 +53,48 @@ class Facility(models.Model):
 class home_page_data(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
+    meta_title = models.CharField(
+        max_length=255,
+        help_text="SEO title for the home page, displayed in search engine results.",
+        blank=True,
+        null=True
+    )
+    meta_description = models.TextField(
+        help_text="SEO description for the home page, displayed in search engine results.",
+        blank=True,
+        null=True
+    )
+    meta_keywords = models.CharField(
+        max_length=500,
+        help_text="Comma-separated keywords for SEO purposes.",
+        blank=True,
+        null=True
+    )
+    canonical= models.CharField(
+        max_length=500,
+        help_text="canonical for SEO purposes.",
+        blank=True,
+        null=True
+    )
+    url= models.CharField(
+        max_length=500,
+        help_text="url",
+        blank=True,
+        null=True
+    )
+    logo = models.URLField(blank=True, null=True)
     def __str__(self):
         return self.title
+    
+class EnquiryForm(models.Model):
+    type = models.ManyToManyField(Course, related_name='courses', blank=True)
+    name = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    phone = models.CharField(max_length=50)
+    message = models.CharField(max_length=250)
+    states = models.CharField(max_length=200, blank=True)
+    cities = models.CharField(max_length=200, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)  # Automatically set for new records
+
+    def __str__(self):
+        return f"{self.name} - {self.email}"

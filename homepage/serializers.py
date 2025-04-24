@@ -74,7 +74,22 @@ class FacilitySerializer(serializers.ModelSerializer):
 class home_page_dataSerializer(serializers.ModelSerializer):
     class Meta:
         model = home_page_data
-        fields = ['id', 'title', 'description', ]
+        fields = ['id', 'title', 'description','meta_title' ,'meta_description','meta_keywords','canonical', 'url','logo' ]
+
+class EnquieryFormSerializer(serializers.ModelSerializer):
+    class Meta :
+        model = EnquiryForm
+        fields = [
+            'type' ,
+            'name' ,
+            'phone',
+            'email',
+            'message', 
+            'cities' ,
+            'states',
+            'created_at'        
+        ]
+
         
 
       
