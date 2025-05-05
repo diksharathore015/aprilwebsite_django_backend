@@ -11,6 +11,7 @@ class EnquiryFormAdmin(admin.ModelAdmin):
 
 
 from .models import *
+admin.site.register(SEO)
 admin.site.register(Banners)
 admin.site.register(Facility)
 admin.site.register(home_page_data)

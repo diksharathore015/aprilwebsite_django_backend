@@ -45,18 +45,13 @@ class BannerSerializer(serializers.ModelSerializer):
         return banner
 
 class SeoSerializer(serializers.ModelSerializer):
-       image_id = serializers.PrimaryKeyRelatedField(
-        queryset=Media.objects.all(),
-        source='logo',  
-        many=True,
-        write_only=True
-    )
-       logo = MediaSerializer(many=True, read_only=True)
+       
+     
 
        class Meta:
         model = SEO
         fields = [
-            'id', 'title',  'logo' ,"image_id" ,'description','keywords','canonical_url','address','contact_number' ,'whatsapp_number','youtube_link','facebook_link','instagram_link','scripts', ]
+            'id', 'title',  'logo' ,'description','keywords','canonical_url','address','contact_number' ,'whatsapp_number','youtube_link','facebook_link','instagram_link','scripts', ]
 
 
 class FAQSerializer(serializers.ModelSerializer):

@@ -9,7 +9,7 @@ class Banners(models.Model):
         return self.title
 class SEO(models.Model):
     title = models.CharField(max_length=255, help_text="The title of the page for SEO.")
-    logo = models.ManyToManyField(Media, related_name='imagess') 
+
     description = models.TextField(help_text="The meta description of the page.")
     keywords = models.CharField(max_length=255, help_text="Comma-separated keywords for SEO.")
     canonical_url = models.URLField(help_text="Canonical URL to avoid duplicate content issues.")
@@ -22,7 +22,14 @@ class SEO(models.Model):
     scripts = models.TextField(blank=True, null=True,)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    
+    url= models.CharField(
+        max_length=500,
+        help_text="url",
+        blank=True,
+        null=True
+    )    
+    logo = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -82,6 +89,7 @@ class home_page_data(models.Model):
         blank=True,
         null=True
     )
+
     logo = models.URLField(blank=True, null=True)
     def __str__(self):
         return self.title
